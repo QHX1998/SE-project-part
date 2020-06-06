@@ -1,0 +1,17 @@
+syntax = "proto3";  
+
+service removereply {
+
+    rpc removereply (input) returns (output) {}
+
+}
+
+message input {
+    string token = 1;
+    string news_id = 2;
+    string reply_id = 3;
+}
+
+message output {
+    string result = 1;
+}

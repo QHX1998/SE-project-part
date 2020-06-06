@@ -1,0 +1,30 @@
+﻿syntax = "proto3";  
+
+message CommentInfo{
+    string id = 1;
+    string commentor = 2;
+    string content = 3;
+    int32 reply_count = 4;
+    int32 like = 5;
+}
+
+message CommentPage{
+    repeated CommentInfo comments = 1;
+    int32 count = 2;
+}
+
+
+service getcomment {
+
+    rpc getcomment (input) returns (output) {}
+
+}
+
+message input {
+    string token = 1;
+    string news_id = 2;
+}
+
+message output {
+    CommentPage result = 1;
+}

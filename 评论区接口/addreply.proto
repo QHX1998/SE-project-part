@@ -1,0 +1,18 @@
+syntax = "proto3";  
+
+service addreply {
+
+    rpc addreply (input) returns (output) {}
+
+}
+
+message input {
+    string token = 1;
+    string news_id = 2;
+    string comment_id = 3;
+    string content = 4;
+}
+
+message output {
+    string result = 1;
+}

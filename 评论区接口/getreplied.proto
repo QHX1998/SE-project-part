@@ -1,0 +1,31 @@
+﻿syntax = "proto3";  
+
+message replyInfo{
+    string id = 1;
+    string replier = 2;
+    string repliee = 3;
+    string content = 4;
+    int32 like = 5;
+}
+
+message ReplyPage{
+    repeated replyInfo replies = 1;
+    int32 totalcount = 2;
+}
+
+
+service getreplied {
+
+    rpc getreplied (input) returns (output) {}
+
+}
+
+message input {
+    string token = 1;
+    string news_id = 2;
+    string comment_id = 3;
+}
+
+message output {
+    ReplyPage result = 1;
+}

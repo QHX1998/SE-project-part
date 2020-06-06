@@ -1,0 +1,16 @@
+syntax = "proto3";  
+
+service click_news {
+
+    rpc click_news (input) returns (output) {}
+
+}
+
+message input {
+    string token = 1;
+    string news_id = 2;
+}
+
+message output {
+    int32 result = 1;
+}
